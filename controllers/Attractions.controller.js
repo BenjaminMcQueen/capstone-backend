@@ -30,13 +30,10 @@ module.exports.post = async (req, res) => {
 };
 
 module.exports.update = async (req, res) => {
-    console.log(req.body);
     //I almost made it go through and individually change every value,
     //but this seemed better in general.
     Attraction.findById(req.params.id)
         .then(attraction => { 
-            console.log(attraction);
-            console.log(req);
             
             if(req.body.name) {attraction.name = req.body.name}
             if(req.body.description) {attraction.description = req.body.description}

@@ -19,9 +19,10 @@ app.use(morgan('dev'));
 app.use(cors());
 
 mongoose.connect(process.env.URI)
-    .then(result => { app.listen(port); console.log("Listening on port", port); console.log("Database connected at:", process.env.URI)})
+    .then(result => { app.listen(port); console.log("Listening on port", port)})
     .catch(err => console.log(err));
 
 app.get('/', (req, res) => { console.log("Got a get"); res.send("get got"); }); //testing garbo
+//leaving this in because Render.com is picky and spins down too much.
 
 app.use('/attractions', attractionRoutes);

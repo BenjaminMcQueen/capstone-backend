@@ -5,7 +5,7 @@ function logError(err){
         const errorLog = ErrorLog.create({"error": err, "reason": err.reason || {}});
         console.log("Error Logged: ", errorLog);
     }
-    catch (catErr) { console.log("Catastrophic Failure: ", error); }
+    catch (catErr) { console.log("Catastrophic Failure: ", catErr); }
 }
 
 //A big object to store error handling functions
@@ -37,7 +37,7 @@ const errorHandler = {
             return;
         }
 
-        console.log("Error handling not yet implimented");
+        console.log("Error handling not yet implimented for ", err);
     }
 };
 
